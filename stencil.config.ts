@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import { angularOutputTarget } from '@stencil/angular-output-target';
 
 export const config: Config = {
   namespace: 'angular-output-target',
@@ -9,9 +10,13 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-      customElementsExportBehavior: 'auto-define-custom-elements',
       externalRuntime: false,
+      dir: 'components'
     },
+    angularOutputTarget({
+      componentCorePackage: 'angular-output-target',
+      directivesProxyFile: './angular/projects/component-library/src/lib/proxies.ts',
+    }),
     {
       type: 'docs-readme',
     },
