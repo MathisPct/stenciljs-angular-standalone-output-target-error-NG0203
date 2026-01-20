@@ -36,3 +36,10 @@ RuntimeError: NG0203: The `ChangeDetectorRef` token injection failed. `inject()`
 - "@stencil/core": 4.38.3
 - "@stencil/angular-output-target": 1.1.1
   
+
+## How I solved the issue
+
+https://www.reddit.com/r/Angular2/comments/14vxf8l/comment/jrfoqcn/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+
+The problem comes from the fact that we do not import in `paths` the built library but the source code of the library.
+To solve the issue you need to change in the `tsconfig.json` of the Angular application the `paths` entry to point to the built library instead of the source code only.
