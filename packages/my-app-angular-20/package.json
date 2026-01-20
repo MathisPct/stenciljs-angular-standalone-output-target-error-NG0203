@@ -1,8 +1,11 @@
 {
-  "name": "angular-workspace",
+  "name": "my-app-angular-20",
   "version": "0.0.0",
   "scripts": {
-    "build": "ng build --configuration production component-library",
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "prettier": {
@@ -18,33 +21,30 @@
     ]
   },
   "private": true,
-  "packageManager": "npm@11.5.2",
   "dependencies": {
-    "angular-output-target": "file:..",
-    "@angular/animations": "20.0.3",
     "@angular/common": "20.0.3",
     "@angular/compiler": "20.0.3",
     "@angular/core": "20.0.3",
     "@angular/forms": "20.0.3",
     "@angular/platform-browser": "20.0.3",
-    "@angular/platform-browser-dynamic": "20.0.3",
     "@angular/router": "20.0.3",
+    "angular-output-target": "0.0.1",
+    "component-library": "0.0.1",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "zone.js": "^0.15.1"
   },
   "devDependencies": {
     "@angular/build": "20.0.2",
-    "@angular/cli": "20.0.2",
+    "@angular/cli": "20.0.3",
     "@angular/compiler-cli": "20.0.3",
-    "@types/jest": "^29.5.14",
-    "jest": "^29.7.0",
-    "jest-canvas-mock": "2",
-    "jest-environment-jsdom": "^29.7.0",
-    "jest-environment-node": "29",
-    "jest-preset-angular": "^14.6.0",
-    "ng-packagr": "20.0.0",
-    "ts-jest": "^29.2.3",
-    "ts-node": "^10.9.2",
+    "@types/jasmine": "~5.1.0",
+    "jasmine-core": "~5.9.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.8.2"
   }
 }

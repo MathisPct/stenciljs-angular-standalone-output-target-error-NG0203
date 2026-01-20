@@ -6,7 +6,7 @@
     "@angular/core": "^20.0.0"
   },
   "dependencies": {
-    "angular-output-target": "file:../../..",
+    "angular-output-target": "0.0.1",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

@@ -35,4 +35,19 @@ RuntimeError: NG0203: The `ChangeDetectorRef` token injection failed. `inject()`
 
 - "@stencil/core": 4.38.3
 - "@stencil/angular-output-target": 1.1.1
-  
+
+# How I solved it ?
+
+Thanks to @johnjenkins https://github.com/stenciljs/output-targets/issues/702#issuecomment-3770026515, I changed the way I reference local packages. Indeed, I used local link resolution with "file:{path}" and it seems that it making things go wonky. Like he suggested, I used npm workspaces instead and now everything works fine.
+
+I declare a parent package.json with workspaces declaration and in each package.json I reference other local packages with their version instead of "file:{path}". 
+
+I tried with "workspace:*" too but it didn't work for me because I had this kind of error when I ran "npm install" at the root of the project:
+
+```shell
+npm install
+npm error code EUNSUPPORTEDPROTOCOL
+npm error Unsupported URL Type "workspace:": workspace:*
+```
+
+After the change, we does not have `NG0203` error anymore.
